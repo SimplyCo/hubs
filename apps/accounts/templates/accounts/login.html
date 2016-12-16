@@ -1,0 +1,22 @@
+{% extends 'hubs/navigation.html'%}
+
+{% load i18n %}
+{% load bootstrap %}
+
+{% block subtitle %}{% trans 'Login' %}{% endblock %}
+
+{% block pagescript%}{% endblock %}
+
+{% block pagestyle%}{% endblock %}
+
+{% block content %}
+    <div class="col-md-4 col-md-offset-4">
+        <form method="post">{% csrf_token %}
+
+            {{ form|bootstrap }}
+
+            <input type="submit" class="btn btn-primary" value="{% trans 'Login' %}">
+
+        </form>
+    </div>
+{% endblock %}

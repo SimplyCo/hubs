@@ -1,0 +1,24 @@
+.table-top-padded {
+    margin-top: 40px;
+}
+
+.page-bottom-margin {
+    margin-bottom: 60px;
+}
+
+.adm-event-detail{
+	padding: 30px 0;
+	font-size: 16px;
+}
+.adm-event-detail__logo,
+.adm-event-detail__bg {
+	height: 100px;
+	width: auto;
+}
+.adm-event-detail__buttons {
+	padding-top: 30px;
+}
+.adm-event-detail > div {
+	padding: 5px;
+	border-top: 1px solid #eee;
+}

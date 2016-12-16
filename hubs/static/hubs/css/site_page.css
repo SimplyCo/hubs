@@ -1,0 +1,42 @@
+
+/* .navbar-inverse .navbar-brand {
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-family: 'Roboto Condensed', 'Roboto', Arial;
+} */
+
+.body-content {
+    min-height: 740px;
+}
+
+/* .catalogue-course__cities a,
+.catalogue-course__tags a {
+    text-decoration: none;
+    color: white;
+} */
+
+
+.footer {
+
+    background-color: #244363;
+    color: #FFF;
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+}
+
+
+/* ===================================
+Navbar Links
+=================================== */
+.sc-navbar-brand {
+    font-size: 12px;
+}
+@media (min-width: 648px) {
+    .sc-navbar-brand {
+        margin-right: 100px;
+        font-size: 18px;
+    }
+}

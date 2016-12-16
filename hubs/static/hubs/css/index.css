@@ -1,0 +1,85 @@
+.filters-section {
+    margin-bottom: 40px;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+
+/* =============================================
+CALENDAR STYLES
+============================================= */
+.index-calendar {
+
+}
+.index-calendar__title {
+	font-size: 30px;
+	font-weight: bold;
+}
+.ev-calendar {
+
+}
+.ev-calendar__navigation {
+	margin-bottom: 15px;
+    margin-top: 15px;
+}
+.ev-calendar__year_btn,
+.ev-calendar__nav_btn {
+	padding: 3px;
+	min-width: 40px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.ev-calendar__year_btn {
+
+}
+.ev-calendar__cities {
+    height: 28px;
+    width: 110px;
+    border-radius: 4px;
+    background-color: #ddd;
+    outline: none;
+}
+.ev-calendar__month-name {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 25px;
+}
+
+.ev-calendar__month {
+	margin: 5px;
+}
+.ev-calendar__week {
+
+}
+.ev-calendar__daycell,
+.ev-calendar__dayofweek {
+	border: 1px solid #ddd;
+    width: 14%;
+    height: 75px;
+    padding: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.ev-calendar__dayofweek {
+    height: 30px;
+    font-size: 10px;
+    line-height: 20px;
+}
+.ev-calendar__date {
+	font-size: 11px;
+}
+.ev-calendar__event {
+    background-color: rgba(0,225,0, .3);
+    border-radius: 5px;
+    border: 1px solid rgba(0,225,0, .9);
+    font-size: 10px;
+    padding: 3px;
+    margin-bottom: 3px;
+}
+
+
+
+

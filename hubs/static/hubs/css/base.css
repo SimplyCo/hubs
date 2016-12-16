@@ -1,0 +1,40 @@
+body, html, table, tr, td, a, button, li, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', Verdana, Arial;
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
+
+body, html {
+    min-height: 100%;
+}
+
+.form-horizontal .form-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.centered {text-align: center;}
+
+
+.btn-unselected {
+    color: #3e3f3a;
+    border: 1px solid #3e3f3a;
+    opacity: 0.9;
+}
+
+.btn-group > .btn.btn-unselected:last-child:not(:first-child),
+.btn-group > .dropdown-toggle.btn-unselected:not(:first-child) {
+    border-left: 0;
+}
+
+
+.btn-unselected:hover {
+    background-color: #F0F0F0;
+    color: #3e3f3a;
+    border-color: #3e3f3a;
+    opacity: 1;
+}
+

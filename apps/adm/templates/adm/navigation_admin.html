@@ -1,0 +1,63 @@
+{% extends 'hubs/base.html' %}
+
+{% load i18n %}
+{% load static %}
+
+
+{% block basestyle %}
+    <link rel="stylesheet" href="{% static 'adm/css/admin.css' %}" type='text/css' />
+    {% block pagestyle %}
+    {% endblock %}
+{% endblock %}
+
+
+{% block main_content %}
+
+    <div class="">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container">
+
+                <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-for-collapse">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                     </button>
+                     <a class="navbar-brand" href="{% url 'adm:dashboard' %}">hubs ADMIN</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-for-collapse">
+
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="{% url 'adm:tag_list_view' %}">Теги</a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'home' %}" target="_blank">Сайт &rarr;</a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'accounts:logout' %}">{%  trans 'Log out' %}</a></li>
+                        {% else %}
+                            <li><a href="{% url 'accounts:registration' %}">{% trans 'Registration' %}</a></li>
+                            <li><a href="{% url 'accounts:login' %}">{% trans 'Login' %}</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+             </div>
+        </nav>
+
+        {% block content %}
+        {% endblock %}
+
+    </div>
+
+{% endblock %}
+
+{% block basescript %}
+    {% block pagescript %}{% endblock %}
+{% endblock %}
