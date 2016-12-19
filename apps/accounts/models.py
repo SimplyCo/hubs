@@ -31,6 +31,15 @@ class CustomUser(AbstractBaseUser):
     email = models.EmailField(max_length=256, unique=True, db_index=True, verbose_name=_('E-mail'))
     user_name = models.CharField(max_length=30, blank=True, verbose_name=_('User name'))
 
+    #####
+    about = models.TextField(blank=True, null=True, verbose_name='About')
+    website = models.URLField(blank=True, null=True, verbose_name='Website')
+    twitter = models.URLField(blank=True, null=True, verbose_name='Twitter')
+    facebook = models.URLField(blank=True, null=True, verbose_name='Facebook')
+    instagram = models.URLField(blank=True, null=True, verbose_name='Instagram')
+    pinterest = models.URLField(blank=True, null=True, verbose_name='Pinterest')
+    #####
+
     is_active = models.BooleanField(default=True, verbose_name=_('Is active'))
     is_staff = models.BooleanField(default=False, verbose_name=_('Is staff'))
     is_superuser = models.BooleanField(default=False, verbose_name=_('Is superuser'))
@@ -62,7 +71,6 @@ class CustomUser(AbstractBaseUser):
         "Does the user have permissions to view the app `app_label`?"
         # Simplest possible answer: Yes, always
         return True
-
 
 
 REASON_CONFIRM = 0
