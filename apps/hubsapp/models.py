@@ -40,7 +40,8 @@ class Hub(models.Model):
     image = models.ImageField(_('Image'), upload_to='hub_images', blank=True, default='')
     created_date = models.DateTimeField(_('Creation date'), auto_now_add=True, blank=False)
 
-
+    def __str__(self):
+        return self.title
 
 
 class Post(models.Model):
@@ -60,5 +61,7 @@ class Post(models.Model):
 
     hub = models.ForeignKey(Hub, blank=True, null=True)
 
+    def __str__(self):
+        return self.title
 
 #####

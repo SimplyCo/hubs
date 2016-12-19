@@ -1,0 +1,42 @@
+{% extends 'adm/navigation_admin.html' %}
+
+{% load i18n %}
+{% load static %}
+{% load bootstrap %}
+
+{% block subtitle %}Хаби{% endblock %}
+
+{% block pagestyle %}{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+
+        <h1>{% if object %}{{ object.title }}{% else %}Новий хаб{% endif %}</h1>
+
+        <hr/>
+
+        <form method="post" enctype="multipart/form-data" class="form-horizontal">{% csrf_token %}
+
+            <div class="form-wrapper">
+
+                {{ form|bootstrap }}
+
+            </div>
+
+            <hr/>
+
+            <div class="buttons">
+                <input type="submit" value="{% if object %}Зберегти{% else %}Створити{% endif %}"
+                       class="btn btn-primary btn-sm">
+            </div>
+
+        </form>
+
+
+    </div>
+
+
+{% endblock %}
+
+{% block pagescript %}{% endblock %}

@@ -2,7 +2,7 @@
 
 from django import forms
 
-from apps.hubsapp.models import Tag
+from apps.hubsapp.models import Tag, Hub, Post
 
 
 # from redactor.widgets import RedactorEditor
@@ -16,3 +16,12 @@ class AdminTagForm(forms.ModelForm):
         #     'text': RedactorEditor(),
         #     'short_text': RedactorEditor(),
         # }
+
+
+#####
+class AdminHubForm(forms.ModelForm):
+	class Meta:
+		model = Hub
+		fields = ['author', 'title', 'slug', 'description', 'image']
+#####
+

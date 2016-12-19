@@ -3,8 +3,8 @@ from django.core.urlresolvers import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.views.generic.base import TemplateView
 
-from apps.adm.forms import AdminTagForm
-from apps.hubsapp.models import Tag
+from apps.adm.forms import AdminTagForm, AdminHubForm
+from apps.hubsapp.models import Tag, Hub, Post
 
 
 class AdminDashboard(LoginRequiredMixin, StaffuserRequiredMixin, TemplateView):
@@ -40,3 +40,34 @@ class AdminTagDeleteView(LoginRequiredMixin, StaffuserRequiredMixin, DeleteView)
     template_name = 'adm/admin_tag_confirm_delete.html'
     success_url = reverse_lazy('adm:tag_list_view')
 
+
+#####
+# ----------------------------------------
+# Hubs
+# ----------------------------------------
+
+class AdminHubListView(LoginRequiredMixin, StaffuserRequiredMixin, ListView):
+    model = Hub
+    template_name = "adm/admin_hub_list.html"
+
+
+class AdminHubCreateView(LoginRequiredMixin, StaffuserRequiredMixin, CreateView):
+    model = Hub
+    form_class = AdminHubForm
+    template_name = 'adm/admin_hub_edit.html'
+    success_url = reverse_lazy('adm:hub_list_view')
+
+
+class AdminHubEditView(LoginRequiredMixin, StaffuserRequiredMixin, UpdateView):
+    model = Hub
+    form_class = AdminHubForm
+    template_name = 'adm/admin_hub_edit.html'
+    success_url = reverse_lazy('adm:hub_list_view')
+
+
+class AdminHubDeleteView(LoginRequiredMixin, StaffuserRequiredMixin, DeleteView):
+    model = Hub
+    template_name = 'adm/admin_hub_confirm_delete.html'
+    success_url = reverse_lazy('adm:hub_list_view')
+
+#####
