@@ -17,6 +17,11 @@ urlpatterns = [
     url(r'^hubs/(?P<pk>\d+)/edit/$', views.AdminHubEditView.as_view(), name='hub_edit_view'),
     url(r'^hubs/(?P<pk>\d+)/delete$', views.AdminHubDeleteView.as_view(), name='hub_delete_view'),
 
+    url(r'^posts/$', views.AdminPostListView.as_view(), name='post_list_view'),
+    url(r'^posts/new/$', views.AdminPostCreateView.as_view(), name='post_create_view'),
+    url(r'^posts/(?P<pk>\d+)/edit/$', views.AdminPostEditView.as_view(), name='post_edit_view'),
+    url(r'^posts/(?P<pk>\d+)/delete$', views.AdminPostDeleteView.as_view(), name='post_delete_view'),
+
 
 
 

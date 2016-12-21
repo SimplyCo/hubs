@@ -3,7 +3,7 @@ from django.core.urlresolvers import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.views.generic.base import TemplateView
 
-from apps.adm.forms import AdminTagForm, AdminHubForm
+from apps.adm.forms import AdminTagForm, AdminHubForm, AdminPostForm
 from apps.hubsapp.models import Tag, Hub, Post
 
 
@@ -69,5 +69,34 @@ class AdminHubDeleteView(LoginRequiredMixin, StaffuserRequiredMixin, DeleteView)
     model = Hub
     template_name = 'adm/admin_hub_confirm_delete.html'
     success_url = reverse_lazy('adm:hub_list_view')
+
+
+
+# ----------------------------------------
+# Posts
+# ----------------------------------------
+class AdminPostListView(LoginRequiredMixin, StaffuserRequiredMixin, ListView):
+    model = Post
+    template_name = "adm/admin_post_list.html"
+
+
+class AdminPostCreateView(LoginRequiredMixin, StaffuserRequiredMixin, CreateView):
+    model = Post
+    form_class = AdminPostForm
+    template_name = 'adm/admin_post_edit.html'
+    success_url = reverse_lazy('adm:post_list_view')
+
+
+class AdminPostEditView(LoginRequiredMixin, StaffuserRequiredMixin, UpdateView):
+    model = Post
+    form_class = AdminPostForm
+    template_name = 'adm/admin_post_edit.html'
+    success_url = reverse_lazy('adm:post_list_view')
+
+
+class AdminPostDeleteView(LoginRequiredMixin, StaffuserRequiredMixin, DeleteView):
+    model = Post
+    template_name = 'adm/admin_post_confirm_delete.html'
+    success_url = reverse_lazy('adm:post_list_view')
 
 #####
