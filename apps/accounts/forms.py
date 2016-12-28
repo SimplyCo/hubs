@@ -8,6 +8,7 @@ from django.template import loader
 
 # from .tasks import custom_send_email
 from .models import CustomUser, UserConfirmToken, REASON_RESET
+from apps.hubsapp.models import Post
 
 
 class RegistrationForm(forms.Form):
@@ -115,3 +116,12 @@ class CustomPasswordResetForm(PasswordResetForm):
             self.send_mail(subject_template_name, email_template_name,
                            context, from_email, user.email,
                            html_email_template_name=html_email_template_name)
+
+
+#####
+class BlogerPostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['author', 'title', 'slug', 'leading_image', 'short_text', 'full_text', 'status', 'placement', 'hub']
+
+#####

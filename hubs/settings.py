@@ -164,7 +164,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 # Default redirect to
-LOGIN_REDIRECT_URL = reverse_lazy('accounts:personal_room')
+LOGIN_REDIRECT_URL = reverse_lazy('accounts:dashboard')
 LOGIN_ADMIN_REDIRECT_URL = reverse_lazy('adm:dashboard')
 LOGOUT_URL = '/'
 

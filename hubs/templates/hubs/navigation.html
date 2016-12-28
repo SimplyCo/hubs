@@ -38,6 +38,14 @@
                     <li class="active">
                         <a href="{% url 'home' %}">{% trans 'Home' %}</a>
                     </li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'accounts:logout' %}">{%  trans 'Log out' %}</a></li>
+                    {% else %}
+                        <li><a href=" {% url 'accounts:login' %} ">Вхід</a></li>
+                        <li>
+                        <a href=" {% url 'accounts:registration' %} ">Реєстрація</a>
+                        </li>
+                    {% endif %}
                 </ul>
         </div>
     </div>

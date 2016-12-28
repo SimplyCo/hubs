@@ -225,7 +225,7 @@ msgstr "Логин"
 msgid "Forget password?"
 msgstr ""
 
-#: apps/accounts/templates/accounts/personal_room.html:5
+#: apps/accounts/templates/accounts/dashboard.html:5
 msgid "Personal room"
 msgstr ""
 

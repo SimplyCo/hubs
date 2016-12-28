@@ -1,0 +1,47 @@
+{% extends 'hubs/navigation.html'%}
+{% load i18n %}
+
+{% block subtitle %}Статті{% endblock %}
+
+{% block pagestyle %}{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+
+        <h1>Статті</h1>
+
+        <hr/>
+
+        <div class="">
+            <a href="{% url 'accounts:bloger_post_create_view' %}" class="btn btn-primary">Створити</a>
+        </div>
+
+        <div class="table-top-padded">
+            <table class="table table-bordered">
+                <thead>
+                    <th>Назва</th>
+                    <th>Slug</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    {% for object in object_list %}
+                    <tr>
+                        <td><a href="{% url 'accounts:bloger_post_edit_view' object.pk %}">{{ object.title }}</a></td>
+                        <td>{{ object.slug }}</td>
+                        <td class="col-md-1">
+                            <a href="{% url 'accounts:bloger_post_delete_view' object.pk %}" class="btn btn-xs btn-danger">Видалити</a>
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+{% endblock %}
+
+{% block pagescript %}{% endblock %}

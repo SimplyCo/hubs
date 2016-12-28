@@ -3,7 +3,7 @@ from django.conf.urls import url
 from django.core.urlresolvers import reverse_lazy
 from django.contrib.auth import views as auth_views
 
-from . import views, views_auth
+from . import views
 from .forms import ResetPassword, CustomPasswordResetForm
 
 
@@ -13,9 +13,15 @@ urlpatterns = [
         views.ConfirmEmail.as_view(), name='email_confirm'),
     url(r'^email/confirm_failed/$', views.ConfirmEmailFailed.as_view(), name='confirm_failed'),
 
-    url(r'^personal_room/$', views.PersonalRoom.as_view(), name='personal_room'),
+    url(r'^dashboard/$', views.PersonalRoom.as_view(), name='dashboard'),
+    #####
+    url(r'^bloger_posts/$', views.BlogerPostListView.as_view(), name='bloger_post_list_view'),
+    url(r'^bloger_posts/new/$', views.BlogerPostCreateView.as_view(), name='bloger_post_create_view'),
+    url(r'^bloger_posts/(?P<pk>\d+)/edit/$', views.BlogerPostEditView.as_view(), name='bloger_post_edit_view'),
+    url(r'^bloger_posts/(?P<pk>\d+)/delete$', views.BlogerPostDeleteView.as_view(), name='bloger_post_delete_view'),
+    #####
 
-    url(r'^login/$', views_auth.login,
+    url(r'^login/$', views.login,
         {
             # 'redirect_field_name': settings.LOGIN_REDIRECT_URL,
             'redirect_admin_field_name': settings.LOGIN_ADMIN_REDIRECT_URL,
@@ -46,7 +52,7 @@ urlpatterns = [
 
     # 3 reset password
     url(r'^reset/confirm/(?P<uidb64>[A-Za-z]+)-(?P<token>.+)/$',
-        views_auth.password_reset_confirm,
+        views.password_reset_confirm,
         {
             'template_name': 'accounts/forget/input_new_password.html',
             'set_password_form': ResetPassword,
@@ -58,4 +64,7 @@ urlpatterns = [
     url(r'^reset/done/$', auth_views.password_reset_complete,
         {'template_name': 'accounts/forget/already_reset.html'},
         name='reset_password_complete'),
+
+
+
 ]
